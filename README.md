@@ -1,4 +1,3 @@
-# Anow 
+### stack: HTML, SCSS, gulp.
 
-
-anow: 
+### Download desktop app Weather or Web app.
