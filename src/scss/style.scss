@@ -1,0 +1,174 @@
+//<ШРИФТЫ>=============================================
+
+//<Подключаем шрифты>==================================
+//&subset=cyrillic-ext
+@import 'fonts';
+//</Подключаем шрифты>=================================
+
+//<Шрифт по умолчанию>=================================
+$fontfamily: '';
+//</Шрифт по умолчанию>================================
+
+//</ШРИФТЫ>============================================
+
+//<ПЕРЕМЕННЫЕ>=========================================
+$minwidth: 320px;
+$mw: 1300;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>========================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>=========================
+@import 'null';
+body {
+	font-family: $fontfamily;
+	color: #fff;
+	font-size: 14px;
+	// #
+	background-color: #040404;
+	&._lock {
+		overflow: hidden;
+		@media (max-width: $md3 + px) {
+			// width: 100%;
+			// position: fixed;
+			// overflow: hidden;
+		}
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>========================
+
+//<ОБОЛОЧКА>===========================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>==========================================
+
+//<ОСНОВНАЯ СЕТКА>=====================================
+._container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>====================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>======
+@import 'popup';
+@import 'header';
+@import 'footer';
+@import 'home';
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>=====
+
+//<ОСНОВНОЙ БЛОК>======================================
+.page {
+	flex: 1 1 auto;
+	&__promo {
+	}
+}
+
+//</ОСНОВНОЙ БЛОК>=====================================
+
+.promo {
+	margin-top: 100px;
+	@media (max-width: 768px) {
+		margin-top: 15px;
+	}
+	&__container {
+		display: flex;
+		gap: 15px;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		row-gap: 40px;
+		@media (max-width: 768px) {
+			text-align: center;
+		}
+	}
+
+	&__info {
+		flex: 0 1 47%;
+		@media (max-width: 768px) {
+			flex: 0 1 100%;
+		}
+		& h1 {
+			font-size: 55px;
+			margin-bottom: 15px;
+			opacity: 0;
+			animation: animText 0.8s forwards 0.8s;
+		}
+		& p {
+			font-size: 26px;
+			color: #949494;
+			opacity: 0;
+			animation: animText 0.8s forwards 1.1s;
+			&:not(:last-child) {
+				margin-bottom: 5px;
+			}
+			&:last-child {
+				opacity: 0;
+				animation: animText 0.8s forwards 1.4s;
+			}
+		}
+	}
+
+	&__img {
+		flex: 0 1 50%;
+		opacity: 0;
+		animation: animImg 0.8s forwards 1s;
+		@media (max-width: 768px) {
+			flex: 0 1 100%;
+		}
+		& img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+@keyframes animText {
+	from {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes animImg {
+	from {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes animLogo {
+	from {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/head.html',{ "title":"Главная" })
+	<body>
+		<div class="wrapper">
+			@@include('html/header.html',{})
+			<main class="page">
+				<section class="page__promo promo">
+					<div class="promo__container _container">
+						<div class="promo__info">
+							<h1>Get the most fun eather app</h1>
+							<p>Simple, nice and user-friendly application of the weather.</p>
+							<p>Only useful information</p>
+						</div>
+						<div class="promo__img">
+							<img
+								src="img/ReadMac.png"
+								alt="PC"
+								width="800px"
+							/>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/footer.html',{})
+		</div>
+		@@include('html/_popup.html',{}) @@include('html/_js.html',{})
+		<script src="js/app.min.js"></script>
+	</body>
+</html>

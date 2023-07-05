@@ -1,0 +1,60 @@
+.header {
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px;
+	}
+
+	&__logo {
+		color: #fff;
+		font-weight: 900;
+		font-size: 30px;
+		opacity: 0;
+		animation: animLogo 0.8s forwards;
+	}
+	&__btns {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+
+	&__btn {
+		font-size: 18px;
+		font-weight: 300;
+		color: #fff;
+		padding: 10px 15px;
+		background-color: #118da8;
+		border-radius: 12px;
+		width: 105px;
+		display: flex;
+		justify-content: center;
+		opacity: 0;
+		border: 1px solid #118da8;
+		animation: animImg 0.8s forwards 0.6s;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			-webkit-box-shadow: 0px 0px 18px 0px rgb(17, 141, 168);
+			-moz-box-shadow: 0px 0px 18px 0px rgb(17, 141, 168);
+			box-shadow: 0px 0px 18px 0px rgb(17, 141, 168);
+			background: none;
+			color: #118da8;
+		}
+	}
+}
+
+.btn-link {
+	background-color: #fff;
+	color: #1d1d1d;
+	opacity: 0;
+	animation: animLogo 0.8s forwards 0.3s;
+	transition: all 0.5s ease 0s;
+	border: 1px solid #fff;
+	&:hover {
+		-webkit-box-shadow: 0px 0px 18px 0px rgba(255, 255, 255, 1);
+		-moz-box-shadow: 0px 0px 18px 0px rgba(255, 255, 255, 1);
+		box-shadow: 0px 0px 18px 0px rgba(255, 255, 255, 1);
+		background: none;
+		color: #fff;
+	}
+}
